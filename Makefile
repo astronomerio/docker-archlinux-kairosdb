@@ -1,5 +1,5 @@
 IMG=ngty/archlinux-kairosdb
-TAG=latest
+TAG=0.9.x
 
 build:
 	docker build -t $(IMG):$(TAG) .
