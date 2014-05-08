@@ -8,3 +8,5 @@ RUN cd /opt; \
 
 # Run kairosdb in foreground on boot
 ENTRYPOINT ["/opt/kairosdb/bin/kairosdb.sh", "run"]
+
+EXPOSE 8080
