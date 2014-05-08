@@ -11,5 +11,7 @@ RUN cd /opt; \
   curl -L http://dl.bintray.com:80/brianhks/generic/kairosdb-0.9.3.tar.gz | \
   tar zxfp -
 
+ADD kairosdb.properties /opt/kairosdb/conf/kairosdb.properties
+
 # Run kairosdb in foreground on boot
 ENTRYPOINT ["/opt/kairosdb/bin/kairosdb.sh", "run"]
