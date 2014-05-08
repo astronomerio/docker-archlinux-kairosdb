@@ -1,5 +1,10 @@
 FROM ngty/archlinux-jdk7
-MAINTAINER ngty
+MAINTAINER enachb
+
+EXPOSE 8080
+EXPOSE 4242
+EXPOSE 2003
+EXPOSE 2004
 
 # Install KAIROSDB
 RUN cd /opt; \
@@ -8,5 +13,3 @@ RUN cd /opt; \
 
 # Run kairosdb in foreground on boot
 ENTRYPOINT ["/opt/kairosdb/bin/kairosdb.sh", "run"]
-
-EXPOSE 8080

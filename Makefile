@@ -1,4 +1,4 @@
-IMG=ngty/archlinux-kairosdb
+IMG=enachb/archlinux-kairosdb
 TAG=latest
 
 build:
