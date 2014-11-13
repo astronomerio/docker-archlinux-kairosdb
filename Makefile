@@ -1,4 +1,4 @@
-IMG=enachb/archlinux-kairosdb
+IMG=mesosphere/archlinux-kairosdb
 TAG=latest
 
 build:
