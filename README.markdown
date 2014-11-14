@@ -25,5 +25,5 @@ The following environment variables can be set
 ```
 #Sample Usage:
 ```
-docker run -P -e "CASS_HOSTS=192.168.1.63:9160" -e "REPFACTOR=1" enachb/archlinux-kairosdb
+docker run -P -e "CASS_HOSTS=192.168.1.63:9160" -e "REPFACTOR=1" mesosphere/archlinux-kairosdb
 ```
