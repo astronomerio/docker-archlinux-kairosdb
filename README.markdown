@@ -22,6 +22,18 @@ The following environment variables can be set
 
     $PORT_CARBON_PICKLE   [kairosdb.carbon.pickle.port] (default: 2004)
                           Port to bind for carbon pickle server
+
+    $READ_CONSISTENCY_DATA     [kairosdb.datastore.cassandra.data_read_consistency_level] (default: ONE)
+                               Consistency Level for Data Read to Cassandra Database
+
+    $WRITE_CONSISTENCY_DATA    [kairosdb.datastore.cassandra.data_write_consistency_level] (default: QUORUM)
+                               Consistency Level for Data Writes to Cassandra Database
+
+    $READ_CONSISTENCY_INDEX    [kairosdb.datastore.cassandra.index_read_consistency_level] (default: ONE)
+                               Consistency Level for Index Reads to Cassandra Database
+
+    $WRITE_CONSISTENCY_INDEX   [kairosdb.datastore.cassandra.index_write_consistency_level] (default: QUORUM)
+                               Consistency Level for Index Writes to Cassandra Database
 ```
 #Sample Usage:
 ```

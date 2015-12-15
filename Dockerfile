@@ -33,7 +33,7 @@ EXPOSE 2004
 
 # Install KAIROSDB
 RUN cd /opt; \
-  curl -L http://dl.bintray.com:80/brianhks/generic/kairosdb-0.9.3.tar.gz | \
+  curl -L https://github.com/kairosdb/kairosdb/releases/download/v1.1.0/kairosdb-1.1.0-1.tar.gz | \
   tar zxfp -
 
 ADD kairosdb.properties /tmp/kairosdb.properties
