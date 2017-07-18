@@ -20,23 +20,36 @@
 #     $PORT_CARBON_PICKLE   [kairosdb.carbon.pickle.port] (default: 2004)
 #                           Port to bind for carbon pickle server
 #
+#     $ENABLE_ROLLUP        [kairosdb.service.rollups] (default: unset)
+#                           Enables rollups
+#
 # Sample Usage:
 #                  docker run -P -e "CASS_HOSTS=192.168.1.63:9160" -e "REPFACTOR=1" enachb/archlinux-kairosdb
 
-FROM ngty/archlinux-jdk7
-MAINTAINER Mesosphere support@mesosphere.io
+FROM openjdk:8
+MAINTAINER ken@astronomer.io.io
 
 EXPOSE 8080
 EXPOSE 4242
 EXPOSE 2003
 EXPOSE 2004
 
+ENV KAIROSDB_VERSION=1.1.3
+ENV KAIROS_CARBON_VERSION=1.1
+
+# Install gettext
+RUN apt-get update && apt-get install -y gettext
+
 # Install KAIROSDB
 RUN cd /opt; \
-  curl -L https://github.com/kairosdb/kairosdb/releases/download/v1.1.1/kairosdb-1.1.1-1.tar.gz | \
+  curl -L https://github.com/kairosdb/kairosdb/releases/download/v${KAIROSDB_VERSION}/kairosdb-${KAIROSDB_VERSION}-1.tar.gz | \
   tar zxfp - && \
-  curl -L https://github.com/kairosdb/kairos-carbon/releases/download/v1.0-1/kairos-carbon-1.0.tar.gz | \
+  curl -L https://github.com/kairosdb/kairos-carbon/releases/download/v${KAIROS_CARBON_VERSION}-1/kairos-carbon-${KAIROS_CARBON_VERSION}.tar.gz | \
   tar zxfp -
+
+# Clean up APT when done.
+RUN apt-get autoremove
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD kairosdb.properties /tmp/kairosdb.properties
 ADD runKairos.sh /usr/bin/runKairos.sh
