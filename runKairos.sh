@@ -17,7 +17,7 @@ function main {
   env | sort
   echo "------------------------------------------------------------------------"
   echo "- kairosdb.properties --------------------------------------------------"
-  /usr/sbin/envsubst < /tmp/kairosdb.properties > ${KAIROSDB_CONF}
+  /usr/bin/envsubst < /tmp/kairosdb.properties > ${KAIROSDB_CONF}
   if [[ ${ENABLE_ROLLUPS} == 1 ]]; then
     sed -i '/^#kairosdb.service.rollups=org.kairosdb.rollup.RollUpModule/s/^#//' ${KAIROSDB_CONF}
   fi
