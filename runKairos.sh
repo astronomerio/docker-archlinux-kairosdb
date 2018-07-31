@@ -10,6 +10,8 @@ export READ_CONSISTENCY=${READ_CONSISTENCY:-ONE}
 export WRITE_CONSISTENCY=${WRITE_CONSISTENCY:-QUORUM}
 export ENABLE_ROLLUPS=${ENABLE_ROLLUPS:-0}
 export KAIROSDB_KEYSPACE=${KAIROSDB_KEYSPACE:-"kairosdb"}
+export SCYLLA_U=${SCYLLA_U:-"admin"}
+export SCYLLA_P=${SCYLLA_P:-"password"}
 
 KAIROSDB_CONF=/opt/kairosdb/conf/kairosdb.properties
 
