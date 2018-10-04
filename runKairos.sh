@@ -12,6 +12,8 @@ export ENABLE_ROLLUPS=${ENABLE_ROLLUPS:-0}
 export KAIROSDB_KEYSPACE=${KAIROSDB_KEYSPACE:-"kairosdb"}
 export SCYLLA_U=${SCYLLA_U:-"admin"}
 export SCYLLA_P=${SCYLLA_P:-"password"}
+export BASIC_AUTH_USER=${BASIC_AUTH_USER:-"admin"}
+export BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD:-"password"}
 
 KAIROSDB_CONF=/opt/kairosdb/conf/kairosdb.properties
 

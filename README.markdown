@@ -28,6 +28,14 @@ The following environment variables can be set
 
     $WRITE_CONSISTENCY    [kairosdb.datastore.cassandra.data_write_consistency_level] (default: QUORUM)
                                Consistency Level for Writes to Cassandra Database
+
+    $BASIC_AUTH_USER      Required, default admin
+
+    $BASIC_AUTH_PASSWORD  Required, default password
+
+    $SCYLLA_U             Required, default admin
+
+    $SCYLLA_P             Required, default password
 ```
 #Sample Usage:
 ```
